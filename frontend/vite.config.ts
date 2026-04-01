@@ -25,15 +25,19 @@ export default defineConfig({
   },
    server: {
      port: 18800,
-     proxy: {
-       "/api": {
-         target: "http://localhost:18790",
-         changeOrigin: true,
-       },
-       "/ws": {
-         target: "ws://localhost:18790",
-         ws: true,
-       },
-     },
+      proxy: {
+        "/api": {
+          target: "http://localhost:18790",
+          changeOrigin: true,
+        },
+        "/ws": {
+          target: "ws://localhost:18790",
+          ws: true,
+        },
+        "/pico/ws": {
+          target: "ws://localhost:18790",
+          ws: true,
+        },
+      },
    },
 })

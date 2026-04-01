@@ -37,12 +37,14 @@ func GetDefaultConfigPath() string {
 // FindPicoclawBinary locates the octai executable.
 // Search order:
 //  1. OCTAI_BINARY environment variable (explicit override)
-//  2. Same directory as the current executable
+//  2. Same directory as the current executable (tries multiple binary names)
 //  3. Falls back to "octai" and relies on $PATH
 func FindPicoclawBinary() string {
-	binaryName := "octai"
+	candidates := []string{"octai", "octai-backend", "octai-app"}
 	if runtime.GOOS == "windows" {
-		binaryName = "octai.exe"
+		for i := range candidates {
+			candidates[i] += ".exe"
+		}
 	}
 
 	if p := os.Getenv(config.EnvBinary); p != "" {
@@ -52,13 +54,16 @@ func FindPicoclawBinary() string {
 	}
 
 	if exe, err := os.Executable(); err == nil {
-		candidate := filepath.Join(filepath.Dir(exe), binaryName)
-		if info, err := os.Stat(candidate); err == nil && !info.IsDir() {
-			return candidate
+		exeDir := filepath.Dir(exe)
+		for _, name := range candidates {
+			candidate := filepath.Join(exeDir, name)
+			if info, err := os.Stat(candidate); err == nil && !info.IsDir() {
+				return candidate
+			}
 		}
 	}
 
-	return "octai"
+	return candidates[0]
 }
 
 // GetLocalIP returns the local IP address of the machine.

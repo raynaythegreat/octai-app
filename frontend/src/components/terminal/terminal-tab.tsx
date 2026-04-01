@@ -10,7 +10,7 @@ import { PageHeader } from "@/components/page-header"
 import "@xterm/xterm/css/xterm.css"
 import "./terminal.css"
 
-const TERMINAL_WS_URL = "ws://localhost:18790/terminal"
+const TERMINAL_WS_URL = `ws://${window.location.hostname}:18790/ws/terminal`
 const RECONNECT_DELAY_MS = 2000
 const MAX_RECONNECT_DELAY_MS = 30000
 
