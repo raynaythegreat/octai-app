@@ -71,9 +71,6 @@
       "endpoints": [],
       "pubkey": ""
     },
-    "autostart": {
-      "macosExtraArgs": [],
-      "args": []
-    }
+    "autostart": {}
   }
 }
