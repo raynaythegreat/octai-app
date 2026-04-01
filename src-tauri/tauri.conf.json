@@ -70,7 +70,6 @@
     "updater": {
       "endpoints": [],
       "pubkey": ""
-    },
-    "autostart": {}
+    }
   }
 }
