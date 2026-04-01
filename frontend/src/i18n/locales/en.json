@@ -1,0 +1,854 @@
+{
+  "navigation": {
+    "ai_url": "AI URL",
+    "capabilities": "Capabilities",
+    "chat": "Chat",
+    "config": "Config",
+    "settings": "Settings",
+    "credentials": "Credentials",
+    "agent_group": "Agent",
+    "history": "History",
+    "logs": "Logs",
+    "loops": "Loops",
+    "mcp": "MCP Servers",
+    "model_group": "Models",
+    "models": "Models",
+    "plugins": "Plugins",
+    "reference_urls": "Reference URLs",
+    "schedule": "Schedule",
+    "terminal": "Terminal",
+    "services": "Services",
+    "mobile_access": "Mobile Access",
+    "tailscale_vpn": "Tailscale VPN",
+    "advanced": "Advanced",
+    "channels_group": "Channels",
+    "show_more_channels": "More",
+    "show_less_channels": "Less",
+    "skills": "Skills",
+    "tools": "Tools"
+  },
+  "terminal": {
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "connecting": "Connecting..."
+  },
+  "chat": {
+    "modes": {
+      "build": "Build",
+      "build_description": "Execute tasks directly",
+      "chat": "Chat",
+      "chat_description": "Research and discussion",
+      "plan": "Plan",
+      "plan_description": "Plan before acting"
+    },
+    "welcome": "How can I help you today?",
+    "welcomeDesc": "Ask me about weather, settings, or any other tasks. I'm here to assist you.",
+    "placeholder": "Start a new message...\nPress Enter to send, Shift + Enter for a new line",
+    "newChat": "New Chat",
+    "notConnected": "Gateway is not running. Start it to chat.",
+    "thinking": {
+      "step1": "Thinking...",
+      "step2": "Analyzing your request...",
+      "step3": "Preparing response...",
+      "step4": "Almost there..."
+    },
+    "history": "History",
+    "noHistory": "No chat history yet",
+    "historyLoadFailed": "Failed to load chat history",
+    "historyOpenFailed": "Failed to open this chat history",
+    "loadingMore": "Loading more...",
+    "deleteSession": "Delete session",
+    "messagesCount": "{{count}} messages",
+    "noModel": "Select model",
+    "empty": {
+      "noConfiguredModel": "No Model Configured",
+      "noConfiguredModelDescription": "You need to configure at least one AI model with an API key before you can start chatting.",
+      "goToModels": "Go to Models",
+      "noSelectedModel": "No Model Selected",
+      "noSelectedModelDescription": "You have configured models, but none is set as default. Select a model before starting chat.",
+      "notRunning": "Gateway Not Running",
+      "notRunningDescription": "Start the gateway service to begin chatting. Use the Start Gateway button in the top bar."
+    },
+    "modelGroup": {
+      "apikey": "API Key",
+      "oauth": "OAuth",
+      "local": "Local"
+    },
+    "voice": {
+      "stopRecording": "Stop recording",
+      "voiceInput": "Voice input"
+    },
+    "channelSwitchHint": "This channel is configured via its settings page.",
+    "channel": {
+      "web": "Web Chat",
+      "tui": "TUI Terminal",
+      "active": "Active Channels",
+      "notConfigured": "Not Configured",
+      "readOnly": "Read-only — view history",
+      "noHistory": "No chat history for {{channel}}",
+      "viewingHistory": "Viewing history"
+    }
+  },
+  "header": {
+    "gateway": {
+      "stopDialog": {
+        "title": "Stop Gateway Service?",
+        "description": "Are you sure you want to stop the gateway? This will disconnect your active chat sessions and halt inference.",
+        "confirm": "Stop Gateway"
+      },
+      "action": {
+        "start": "Start Gateway",
+        "stop": "Stop Gateway",
+        "restart": "Restart Gateway"
+      },
+      "status": {
+        "starting": "Starting Gateway...",
+        "restarting": "Restarting Gateway...",
+        "stopping": "Stopping Gateway..."
+      },
+      "restartRequired": "Model changes require a gateway restart to take effect."
+    }
+  },
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "saving": "Saving...",
+    "reset": "Reset",
+    "confirm": "Confirm"
+  },
+  "labels": {
+    "loading": "Loading..."
+  },
+  "credentials": {
+    "description": "Manage OAuth and token-based credentials for supported providers.",
+    "loading": "Loading credentials...",
+    "providers": {
+      "openai": {
+        "description": "Supports browser OAuth, device code, and token login."
+      },
+      "anthropic": {
+        "description": "Uses token login for Claude access."
+      },
+      "antigravity": {
+        "description": "Uses browser OAuth for Google Cloud Code Assist."
+      },
+      "qwen": {
+        "description": "Uses device code login for Qwen Portal access."
+      },
+      "minimax": {
+        "description": "Uses device code login for MiniMax Platform access."
+      }
+    },
+    "status": {
+      "connected": "Connected",
+      "needsRefresh": "Needs refresh",
+      "expired": "Expired",
+      "notLoggedIn": "Not logged in"
+    },
+    "actions": {
+      "browser": "Browser OAuth",
+      "deviceCode": "Device Code",
+      "stopLoading": "Stop Loading",
+      "saveToken": "Save",
+      "logout": "Logout",
+      "test": "Test",
+      "deleteKey": "Delete Key",
+      "updateModels": "Update Models"
+    },
+    "logoutDialog": {
+      "title": "Logout provider?",
+      "description": "This will remove your saved credential for {{provider}}."
+    },
+    "fields": {
+      "openaiToken": "OpenAI token",
+      "anthropicToken": "Anthropic token"
+    },
+    "labels": {
+      "account": "Account",
+      "email": "Email",
+      "project": "Project"
+    },
+    "errors": {
+      "loadFailed": "Failed to load credentials",
+      "flowFailed": "Failed to check authentication flow",
+      "loginFailed": "Login failed",
+      "logoutFailed": "Logout failed",
+      "invalidBrowserResponse": "Invalid browser login response",
+      "invalidDeviceResponse": "Invalid device code response",
+      "popupBlocked": "Unable to open a new tab. Please allow popups and try again.",
+      "saveFailed": "Failed to save API key",
+      "testFailed": "Verification failed"
+    },
+    "flow": {
+      "current": "Current authentication status",
+      "pending": "Waiting for authorization...",
+      "success": "Authentication successful",
+      "error": "Authentication failed",
+      "expired": "Authentication session expired"
+    },
+    "device": {
+      "title": "Device Login",
+      "description": "Open the verification page and enter the code below. This page will refresh automatically.",
+      "code": "User Code",
+      "url": "Verification URL",
+      "polling": "Polling login status...",
+      "open": "Open Verification Page"
+    },
+    "sections": {
+      "oauth": "OAuth Providers",
+      "apikey": "API Key Providers"
+    },
+    "apikey": {
+      "configured": "Configured",
+      "notConfigured": "Not configured",
+      "keyPlaceholder": "Enter API key"
+    },
+    "local": {
+      "connected": "Connected",
+      "notRunning": "Not running",
+      "connectedDesc": "Local server detected — no API key required. Models auto-discovered.",
+      "notRunningDesc": "Local server not detected. Start the server and refresh to auto-discover models."
+    },
+    "updateModels": {
+      "success": "Found {{count}} models from {{provider}}",
+      "noNew": "No new models found"
+    },
+    "save": {
+      "success": "API key saved"
+    },
+    "delete": {
+      "success": "API key removed"
+    },
+    "test": {
+      "success": "API key verified successfully",
+      "failure": "Verification failed: {{error}}"
+    },
+    "tabs": {
+      "text": "Chat",
+      "image": "Image",
+      "video": "Voice"
+    }
+  },
+  "models": {
+    "description": "Configure API keys for AI providers. Only configured models are available for chat.",
+    "loadError": "Failed to load models",
+    "noDefaultHintPrefix": "No default model set yet. Click",
+    "noDefaultHintSuffix": "to set one.",
+    "status": {
+      "configured": "Configured",
+      "unconfigured": "Not configured"
+    },
+    "badge": {
+      "default": "Default",
+      "virtual": "Virtual"
+    },
+    "action": {
+      "edit": "Edit API key",
+      "setDefault": "Set as default",
+      "delete": "Delete model"
+    },
+    "defaultOnSave": {
+      "label": "Default Model",
+      "description": "Automatically set this model as default after saving."
+    },
+    "add": {
+      "button": "Add Model",
+      "title": "Add Custom Model",
+      "description": "Add an OpenAI-compatible or native model endpoint.",
+      "modelName": "Model Alias",
+      "modelNamePlaceholder": "e.g. my-gpt4",
+      "modelNameHint": "A short name used to identify this model in conversations.",
+      "modelId": "Model Identifier",
+      "modelIdPlaceholder": "e.g. openai/gpt-4o",
+      "modelIdHint": "Format: protocol/model-id. Supported: openai, anthropic, gemini, groq, …",
+      "errorRequired": "This field is required.",
+      "errorDuplicateModelName": "Model alias already exists. Please use a different name.",
+      "saveError": "Failed to add model",
+      "confirm": "Add Model"
+    },
+    "delete": {
+      "title": "Delete Model?",
+      "description": "\"{{name}}\" will be permanently removed from your model list. This cannot be undone.",
+      "confirm": "Delete"
+    },
+    "advanced": {
+      "toggle": "Advanced options"
+    },
+    "field": {
+      "apiBase": "API Base URL",
+      "apiKey": "API Key",
+      "apiKeyPlaceholder": "Enter your API key",
+      "apiKeyPlaceholderSet": "Leave blank to keep existing key",
+      "proxy": "HTTP Proxy",
+      "proxyHint": "Optional. e.g. http://127.0.0.1:7890",
+      "authMethod": "Auth Method",
+      "authMethodHint": "Authentication method: oauth, token. Leave blank for API key auth.",
+      "connectMode": "Connect Mode",
+      "connectModeHint": "Connection mode for CLI-based providers: stdio or grpc.",
+      "workspace": "Workspace Path",
+      "workspaceHint": "Working directory for CLI-based providers (e.g. GitHub Copilot).",
+      "requestTimeout": "Request Timeout (s)",
+      "requestTimeoutHint": "Maximum seconds to wait for a response. 0 = use default.",
+      "rpm": "Rate Limit (RPM)",
+      "rpmHint": "Maximum requests per minute. 0 = no limit.",
+      "thinkingLevel": "Thinking Level",
+      "thinkingLevelHint": "Extended thinking budget: off, low, medium, high, xhigh, adaptive.",
+      "maxTokensField": "Max Tokens Field",
+      "maxTokensFieldHint": "Override the request field name for max tokens, e.g. max_completion_tokens.",
+      "extraBody": "Extra Body",
+      "extraBodyHint": "Additional JSON fields to inject into the request body, e.g. {\"reasoning_split\": true}."
+    },
+    "edit": {
+      "title": "Configure {{name}}",
+      "apiKeyHint": "A key is already set. Leave blank to keep it unchanged.",
+      "oauthNote": "This provider uses OAuth — no API key required.",
+      "saveError": "Failed to save"
+    },
+    "tabs": {
+      "text": "Chat",
+      "image": "Image",
+      "video": "Video",
+      "browse": "Browse"
+    }
+  },
+  "aiUrl": {
+    "title": "AI URL Scanner",
+    "description": "Discover and integrate tools, skills, and MCP servers from any URL",
+    "inputPlaceholder": "https://github.com/owner/repo or https://example.com",
+    "scanButton": "Scan",
+    "scanning": "Analyzing URL with AI...",
+    "noResults": "No integrable items found",
+    "resultsTitle": "{{count}} item discovered",
+    "resultsTitle_plural": "{{count}} items discovered",
+    "selectAll": "Select all",
+    "integrateButton": "Integrate {{count}} selected",
+    "integrateSuccess": "Successfully integrated {{count}} item",
+    "integrateSuccess_plural": "Successfully integrated {{count}} items",
+    "sidebarTitle": "AI URL",
+    "errors": {
+      "emptyUrl": "Please enter a URL",
+      "analyzeFailed": "Failed to analyze URL",
+      "integrateFailed": "Failed to integrate selected items"
+    },
+    "crawlDepth": "Crawl Depth",
+    "maxPages": "Max Pages",
+    "sameDomain": "Same Domain Only"
+  },
+  "channels": {
+    "loadError": "Failed to load channels",
+    "edit": "Configure {{name}}",
+    "status": {
+      "configured": "Configured"
+    },
+    "name": {
+      "telegram": "Telegram",
+      "discord": "Discord",
+      "slack": "Slack",
+      "feishu": "Feishu",
+      "dingtalk": "DingTalk",
+      "line": "LINE",
+      "qq": "QQ",
+      "onebot": "OneBot",
+      "wecom": "WeCom",
+      "whatsapp": "WhatsApp",
+      "whatsapp_native": "WhatsApp Native",
+      "pico": "Web",
+      "maixcam": "MaixCam",
+      "matrix": "Matrix",
+      "irc": "IRC",
+      "weixin": "WeChat"
+    },
+    "weixin": {
+      "warningTitle": "Testing phase, use with caution",
+      "warningDesc": "The WeChat channel is still experimental and may carry a risk of account suspension. Use it only if you understand and accept the risk.",
+      "bindTitle": "WeChat Account Binding",
+      "bindDesc": "Scan the QR code with WeChat to bind your personal account.",
+      "bind": "Bind WeChat",
+      "rebind": "Re-bind",
+      "bound": "WeChat Bound",
+      "notBound": "WeChat account not bound yet.",
+      "generating": "Generating QR code...",
+      "scanHint": "Open WeChat and scan the QR code",
+      "scanned": "Scanned — please confirm in WeChat",
+      "expired": "QR code expired",
+      "retry": "Try Again",
+      "refresh": "Refresh QR",
+      "errorGeneric": "An error occurred. Please try again."
+    },
+    "wecom": {
+      "bindTitle": "WeCom Binding",
+      "bindDesc": "Scan the QR code with WeCom to bind your AI Bot.",
+      "enableDesc": "Once bound, you can enable or disable the channel here.",
+      "enableBindFirst": "Bind the bot first, then enable the channel.",
+      "bind": "Bind WeCom",
+      "rebind": "Re-bind",
+      "bound": "WeCom Bound",
+      "notBound": "WeCom AI Bot not bound yet.",
+      "generating": "Generating QR code...",
+      "scanHint": "Open WeCom and scan the QR code",
+      "scanned": "Scanned, please confirm in WeCom",
+      "expired": "QR code expired",
+      "retry": "Try Again",
+      "refresh": "Refresh QR",
+      "errorGeneric": "An error occurred. Please try again."
+    },
+    "field": {
+      "token": "Bot Token",
+      "tokenPlaceholder": "Enter bot token",
+      "botToken": "Bot Token",
+      "appToken": "App Token",
+      "appId": "App ID",
+      "appSecret": "App Secret",
+      "verificationToken": "Verification Token",
+      "encryptKey": "Encrypt Key",
+      "baseUrl": "API Base URL",
+      "proxy": "HTTP Proxy",
+      "mentionOnly": "Mention Only",
+      "typingEnabled": "Typing Indicator",
+      "placeholderEnabled": "Placeholder Message",
+      "placeholderText": "Placeholder Text",
+      "groupTriggerMentionOnly": "Group Mention Only",
+      "groupTriggerPrefixes": "Group Trigger Prefixes",
+      "isLark": "Lark (International)",
+      "allowFrom": "Allow From",
+      "allowFromPlaceholder": "e.g. 123456, 789012",
+      "allowOrigins": "Allow Origins",
+      "allowOriginsPlaceholder": "e.g. https://example.com, http://localhost:5173",
+      "secretPlaceholder": "Enter secret",
+      "secretHintSet": "A value is already set. Leave blank to keep it unchanged."
+    },
+    "page": {
+      "notFound": "Channel \"{{name}}\" is not supported.",
+      "saveSuccess": "Channel configuration saved.",
+      "saveError": "Failed to save channel configuration",
+      "enabled": "enabled",
+      "docLink": "Documentation",
+      "enableLabel": "Enable channel",
+      "restartRequiredTitle": "Gateway restart required",
+      "restartRequiredDesc": "The latest {{name}} configuration has been saved. Restart the gateway for it to take effect."
+    },
+    "form": {
+      "desc": {
+        "token": "Bot access token used to connect to the platform API.",
+        "botToken": "Bot token used to send and receive messages.",
+        "appToken": "App token used for Socket Mode connections.",
+        "appId": "Unique application ID used for authentication.",
+        "appSecret": "Application secret used for signing and authentication.",
+        "verificationToken": "Verification token for event callbacks.",
+        "encryptKey": "Encryption key used to decrypt callback payloads.",
+        "baseUrl": "Platform API base URL. Official endpoint is used by default.",
+        "proxy": "HTTP proxy address for outbound network access.",
+        "mentionOnly": "Only respond when the bot is explicitly mentioned in group chats.",
+        "typingEnabled": "Display typing status while the assistant is generating a response.",
+        "placeholderEnabled": "Enable temporary placeholder messages before the final reply is sent.",
+        "groupTriggerMentionOnly": "In group chats, respond only when the bot is mentioned.",
+        "groupTriggerPrefixes": "Custom group-chat trigger prefixes, separated by commas.",
+        "isLark": "Use Lark international domain (open.larksuite.com) instead of Feishu domain (open.feishu.cn).",
+        "allowFrom": "Allowed user or group IDs, separated by commas.",
+        "allowOrigins": "Allowed origin domains, separated by commas.",
+        "wsUrl": "WebSocket service URL.",
+        "reconnectInterval": "Reconnect interval after disconnection (seconds).",
+        "bridgeUrl": "Bridge service URL.",
+        "sessionStorePath": "Local path for session storage.",
+        "useNative": "Whether to use native client mode.",
+        "host": "Service host address.",
+        "port": "Service port.",
+        "homeserver": "Matrix homeserver URL.",
+        "userId": "Account user ID.",
+        "deviceId": "Device ID.",
+        "joinOnInvite": "Automatically join rooms when invited.",
+        "clientId": "Client ID used for platform authentication.",
+        "corpId": "Enterprise Corp ID.",
+        "agentId": "Enterprise application Agent ID.",
+        "webhookUrl": "Full webhook URL.",
+        "webhookHost": "Webhook listening host.",
+        "webhookPort": "Webhook listening port.",
+        "webhookPath": "Webhook route path.",
+        "replyTimeout": "Reply timeout in seconds.",
+        "maxSteps": "Maximum number of processing steps.",
+        "welcomeMessage": "Welcome message content for new sessions.",
+        "allowTokenQuery": "Allow token in URL query parameters.",
+        "pingInterval": "Connection heartbeat interval in seconds.",
+        "readTimeout": "Read timeout in seconds.",
+        "writeTimeout": "Write timeout in seconds.",
+        "maxConnections": "Maximum number of concurrent connections.",
+        "server": "IRC server address.",
+        "tls": "Whether to enable TLS.",
+        "nick": "Bot nickname.",
+        "user": "IRC username.",
+        "realName": "Displayed real name.",
+        "channels": "IRC channels to join.",
+        "requestCaps": "IRC capability list requested on connect.",
+        "maxBase64FileSizeMiB": "Maximum size in MiB for converting local files to base64 before upload. 0 means unlimited. Applies only to local files, not URL uploads.",
+        "genericField": "Used to configure {{field}}."
+      }
+    },
+    "validation": {
+      "requiredField": "This field is required."
+    }
+  },
+  "pages": {
+    "agent": {
+      "aiUrl": {
+        "add": "Add",
+        "already_exists": "Already exists",
+        "args_hint": "space-separated",
+        "args_label": "Arguments",
+        "args_placeholder": "e.g. -y @modelcontextprotocol/server-github",
+        "cancel_all": "Cancel all",
+        "command_label": "Command",
+        "command_placeholder": "e.g. npx, uvx, node",
+        "conflict_description": "Some items already exist. Choose how to handle each one.",
+        "conflict_title": "Resolve Conflicts",
+        "connection_http": "HTTP (remote URL)",
+        "connection_sse": "SSE (remote URL)",
+        "connection_stdio": "stdio (local command)",
+        "connection_type": "Connection type",
+        "continue": "Continue",
+        "manual_config_description": "needs connection details to be integrated.",
+        "manual_config_more": "{{count}} more after this",
+        "manual_config_title": "Configure MCP Server",
+        "needs_config": "needs config",
+        "replace": "Replace",
+        "skip": "Skip",
+        "skip_this": "Skip this one",
+        "url_label": "URL",
+        "url_placeholder": "https://mcp.example.com/sse"
+      },
+      "load_error": "Failed to load agent support information.",
+      "plugins": {
+        "delete_error": "Failed to delete plugin.",
+        "empty_no_installed": "No plugins installed yet. Use the AI URL Scanner to discover and install plugins.",
+        "empty_no_match": "No plugins match your search.",
+        "load_error": "Failed to load plugins.",
+        "no_description": "No description",
+        "refresh": "Refresh",
+        "remove": "Remove plugin",
+        "remove_success": "Removed \"{{name}}\"",
+        "search_placeholder": "Search by name or type…",
+        "tab_all": "All",
+        "tab_mcp_servers": "MCP Servers",
+        "tab_other": "Other",
+        "tab_skills": "Skills",
+        "tab_tools": "Tools",
+        "title": "Plugins",
+        "update_error": "Failed to update plugin."
+      },
+      "skills": {
+        "description": "Skills are loaded from the workspace, global OctAi home, and builtin directories.",
+        "empty": "No skills are currently available.",
+        "import": "Import Skill",
+        "import_success": "Skill imported.",
+        "import_error": "Failed to import skill.",
+        "view": "View",
+        "delete": "Delete",
+        "delete_title": "Delete Skill?",
+        "delete_description": "\"{{name}}\" will be removed from workspace skills.",
+        "delete_confirm": "Delete",
+        "delete_success": "Skill deleted.",
+        "delete_error": "Failed to delete skill.",
+        "viewer_title": "Skill Content",
+        "viewer_description": "Read the current effective SKILL.md content here.",
+        "loading_detail": "Loading skill content...",
+        "load_detail_error": "Failed to load skill content.",
+        "path": "Skill Path",
+        "no_description": "No description provided."
+      },
+      "tools": {
+        "description": "This view reflects whether each agent tool is enabled, disabled, or blocked by a missing prerequisite.",
+        "empty": "No tools are available.",
+        "enable": "Enable",
+        "disable": "Disable",
+        "enable_success": "Tool enabled.",
+        "disable_success": "Tool disabled.",
+        "toggle_error": "Failed to update tool state.",
+        "config_key": "Controlled by tools.{{key}}",
+        "status": {
+          "enabled": "Enabled",
+          "disabled": "Disabled",
+          "blocked": "Blocked"
+        },
+        "categories": {
+          "automation": "Automation",
+          "filesystem": "Filesystem",
+          "web": "Web",
+          "communication": "Communication",
+          "skills": "Skills",
+          "agents": "Agents",
+          "hardware": "Hardware",
+          "discovery": "Discovery"
+        },
+        "reasons": {
+          "requires_linux": "This tool only works on Linux hosts with the required device files exposed.",
+          "requires_skills": "Enable `tools.skills` before this skill-registry tool can be used.",
+          "requires_subagent": "Enable `tools.subagent` before the spawn tool can delegate work.",
+          "requires_mcp_discovery": "Enable `tools.mcp.discovery` before MCP discovery tools become available."
+        }
+      }
+    },
+    "config": {
+      "autoAssist": {
+        "description": "Automatically activate skills and tools based on context.",
+        "exclude_mcp_servers": "Exclude MCP Servers",
+        "exclude_skills": "Exclude Skills",
+        "exclude_tools": "Exclude Tools",
+        "excluded": "excluded",
+        "loading": "Loading Auto-Assist settings…",
+        "max_auto_skills": "Max auto-activated skills",
+        "none_available": "None available.",
+        "save_error": "Failed to save settings.",
+        "saved": "Saved",
+        "title": "Auto-Assist"
+      },
+      "load_config_error": "Failed to load config.",
+      "load_error": "Failed to load configuration. Please refresh and try again.",
+      "validation": {
+        "session_scope_required": "Session scope is required.",
+        "workspace_required": "Workspace path is required."
+      },
+      "workspace": "Workspace Directory",
+      "workspace_hint": "Base directory for agent file operations.",
+      "restrict_workspace": "Restrict to Workspace",
+      "restrict_workspace_hint": "Only allow file operations inside workspace.",
+      "tool_feedback_enabled": "Tool Feedback",
+      "tool_feedback_enabled_hint": "Send a short tool-call preview into the current chat before each tool execution.",
+      "tool_feedback_max_args_length": "Tool Feedback Args Preview Length",
+      "tool_feedback_max_args_length_hint": "Maximum number of argument characters shown in each tool feedback message. Set to 0 to use the default.",
+      "exec_enabled": "Allow Commands",
+      "exec_enabled_hint": "Enable or disable command execution for the app. When disabled, no command requests will run.",
+      "allow_remote": "Allow Remote Commands",
+      "allow_remote_hint": "When enabled, remote sessions or non-local contexts can also run commands. When disabled, command execution stays limited to local safe contexts.",
+      "enable_deny_patterns": "Enable Blacklist",
+      "enable_deny_patterns_hint": "When enabled, the app blocks commands that match its built-in dangerous patterns and the custom command blacklist below.",
+      "exec_timeout_seconds": "Command Timeout (seconds)",
+      "exec_timeout_seconds_hint": "Maximum runtime for command requests. Set to 0 to use the default timeout.",
+      "custom_deny_patterns": "Command Blacklist",
+      "custom_deny_patterns_hint": "Add extra command-blocking rules, one regular expression per line. A command matching any rule here will be blocked.",
+      "custom_allow_patterns": "Command Whitelist",
+      "custom_allow_patterns_hint": "Add extra command-allow rules, one regular expression per line. A command matching any rule here skips blacklist matching, but other safety limits still apply.",
+      "custom_patterns_placeholder": "^rm\\s+-rf\\b\n^git\\s+push\\b",
+      "pattern_detector_title": "Pattern Detection Tool",
+      "pattern_detector_hint": "Enter a command to test if it matches any blacklist or whitelist patterns.",
+      "pattern_detector_input_placeholder": "Enter a command to test, e.g., rm -rf /tmp",
+      "pattern_detector_test_button": "Test",
+      "pattern_detector_result_allowed": "Allowed (matches whitelist)",
+      "pattern_detector_result_blocked": "Blocked (matches blacklist)",
+      "pattern_detector_result_no_match": "No match (will use default rules)",
+      "allow_shell_execution": "Allow Scheduled Commands",
+      "allow_shell_execution_hint": "Allow scheduled tasks to run commands by default. When disabled, users must pass command_confirm=true to schedule a command task.",
+      "cron_exec_timeout": "Scheduled Command Timeout (minutes)",
+      "cron_exec_timeout_hint": "Maximum runtime for scheduled commands. Set to 0 to disable the timeout.",
+      "max_tokens": "Max Tokens",
+      "max_tokens_hint": "Upper token limit per model response.",
+      "context_window": "Context Window",
+      "context_window_hint": "Model input context capacity in tokens. Leave empty to use the default (4x max tokens).",
+      "max_tool_iterations": "Max Tool Iterations",
+      "max_tool_iterations_hint": "Maximum tool-call loops in a single task.",
+      "summarize_threshold": "Summarize Message Threshold",
+      "summarize_threshold_hint": "Start summarization after this many messages.",
+      "summarize_token_percent": "Summarize Token Percent",
+      "summarize_token_percent_hint": "Used when conversation summary is triggered.",
+      "session_scope": "Session Scope",
+      "session_scope_hint": "How chat context is isolated across peers/channels.",
+      "session_scope_per_channel_peer": "Per Channel + Peer",
+      "session_scope_per_channel_peer_desc": "Separate context for each user in each channel.",
+      "session_scope_per_channel": "Per Channel",
+      "session_scope_per_channel_desc": "One shared context per channel.",
+      "session_scope_per_peer": "Per Peer",
+      "session_scope_per_peer_desc": "One context per user across channels.",
+      "session_scope_global": "Global",
+      "session_scope_global_desc": "All messages share one global context.",
+      "heartbeat_enabled": "Heartbeat",
+      "heartbeat_enabled_hint": "Send periodic heartbeat messages.",
+      "heartbeat_interval": "Heartbeat Interval (minutes)",
+      "heartbeat_interval_hint": "Interval in minutes between heartbeat signals.",
+      "devices_enabled": "Enable Devices",
+      "devices_enabled_hint": "Enable hardware-device integrations.",
+      "monitor_usb": "Monitor USB",
+      "monitor_usb_hint": "Watch USB plug/unplug events when devices are enabled.",
+      "autostart_label": "Launch at Login",
+      "autostart_hint": "Start OctAi Dashboard automatically when you log in.",
+      "autostart_unsupported": "Launch at login is not supported on this platform.",
+      "autostart_load_error": "Failed to load launch-at-login status.",
+      "server_port": "Service Port",
+      "server_port_hint": "HTTP port used by OctAi Dashboard.",
+      "lan_access": "Enable LAN Access",
+      "lan_access_hint": "Allow access from other devices on your local network.",
+      "allowed_cidrs": "Allowed Network CIDRs",
+      "allowed_cidrs_hint": "Only clients from these CIDR ranges can access the service. One per line or comma-separated. Leave empty to allow all.",
+      "allowed_cidrs_placeholder": "192.168.1.0/24\n10.0.0.0/8",
+      "sections": {
+        "agent": "Agent",
+        "runtime": "Runtime",
+        "exec": "Run Commands",
+        "cron": "Cron Tasks",
+        "launcher": "Service",
+        "devices": "Devices"
+      },
+      "open_raw": "Raw Config",
+      "back_to_visual": "Visual Config",
+      "raw_json_title": "Raw JSON Configuration",
+      "json_placeholder": "Enter valid JSON configuration...",
+      "save_success": "Configuration saved successfully.",
+      "save_error": "Failed to save configuration.",
+      "reset_confirm_title": "Reset Changes",
+      "reset_confirm_desc": "Are you sure you want to reset your unsaved changes back to the last saved state?",
+      "reset_success": "Changes have been reset to the last saved state.",
+      "invalid_json": "Invalid JSON format.",
+      "format_success": "JSON formatted successfully.",
+      "format_error": "Invalid JSON format.",
+      "format": "Format",
+      "unsaved_changes": "You have unsaved changes."
+    },
+    "logs": {
+      "clear": "Clear logs",
+      "empty": "Waiting for logs..."
+    }
+  },
+  "mcp": {
+    "title": "MCP Servers",
+    "description": "Manage Model Context Protocol servers to extend your agent with additional tools and capabilities.",
+    "enabled": "MCP Enabled",
+    "addServer": "Add Server",
+    "editServer": "Edit Server",
+    "deleteServer": "Delete Server",
+    "noServers": "No MCP servers configured yet. Add one to extend your agent's capabilities.",
+    "fields": {
+      "name": "Server Name",
+      "command": "Command",
+      "args": "Arguments",
+      "type": "Type",
+      "url": "URL",
+      "env": "Environment Variables",
+      "argsHint": "Space-separated arguments, e.g. --port 3000",
+      "envHint": "One KEY=value per line"
+    },
+    "types": {
+      "stdio": "Stdio (local process)",
+      "sse": "SSE (HTTP stream)",
+      "http": "HTTP"
+    },
+    "server": {
+      "saved": "Server saved",
+      "deleted": "Server deleted",
+      "saveError": "Failed to save server",
+      "deleteError": "Failed to delete server"
+    },
+    "discovery": {
+      "title": "Tool Discovery",
+      "description": "Automatically discover and index tools from connected MCP servers.",
+      "enabled": "Discovery Enabled"
+    },
+    "toggle": {
+      "enableError": "Failed to update MCP settings"
+    }
+  },
+  "settings": {
+    "mobile": {
+      "title": "Mobile Access",
+      "description": "Configure mobile access to your OctAi instance from phones and other devices.",
+      "enable": "Enable Mobile Access",
+      "enabled_success": "Mobile access enabled",
+      "disabled_success": "Mobile access disabled",
+      "toggle_error": "Failed to update mobile access setting",
+      "connection_method": "Connection Method",
+      "method_tailscale": "Tailscale VPN (Recommended)",
+      "method_lan": "Local Network (LAN)",
+      "method_changed": "Connection method updated",
+      "access_url": "Access URL",
+      "url_copied": "URL copied to clipboard",
+      "qr_code": "QR Code",
+      "devices": "Connected Devices",
+      "devices_description": "Devices currently connected to this instance.",
+      "enable_first": "Enable mobile access to see connected devices.",
+      "no_devices": "No devices connected yet",
+      "device_name": "Device",
+      "device_type": "Type",
+      "last_connected": "Last Connected"
+    },
+    "tailscale": {
+      "title": "Tailscale VPN",
+      "description": "Set up Tailscale to create a secure VPN tunnel for remote access.",
+      "status": "Status",
+      "status_connected": "Connected",
+      "status_disconnected": "Disconnected",
+      "status_not_installed": "Not Installed",
+      "install": "Install Tailscale",
+      "installing": "Installing...",
+      "install_success": "Tailscale installed successfully",
+      "install_error": "Failed to install Tailscale",
+      "authenticate": "Authenticate",
+      "authenticating": "Authenticating...",
+      "auth_started": "Authentication started. Complete it in your browser.",
+      "auth_error": "Failed to start authentication",
+      "toggle_error": "Failed to update Tailscale setting",
+      "ip_address": "IP Address",
+      "hostname": "Hostname",
+      "tailnet_url": "Tailnet URL",
+      "magic_dns": "Use MagicDNS",
+      "auto_start": "Auto-start on boot",
+      "devices": "Tailnet Devices",
+      "devices_description": "Other devices on your Tailnet.",
+      "no_devices": "No other devices on your Tailnet",
+      "device_hostname": "Hostname",
+      "device_status": "Status",
+      "online": "Online",
+      "offline": "Offline"
+    },
+    "advanced": {
+      "title": "Advanced",
+      "description": "Configure advanced settings for power users.",
+      "terminal_access": "Terminal Access",
+      "terminal_enabled": "Enable embedded terminal",
+      "shell_path": "Shell Path",
+      "portable_mode": "Portable Mode",
+      "portable_enabled": "Store all data in app directory",
+      "auto_updater": "Auto-updater",
+      "auto_updater_enabled": "Enable auto-updater",
+      "update_channel": "Update Channel",
+      "channel_stable": "Stable",
+      "channel_beta": "Beta",
+      "current_version": "Current Version",
+      "check_now": "Check Now",
+      "checking": "Checking...",
+      "update_check_info": "You are already on the latest version.",
+      "update_check_error": "Failed to check for updates"
+    }
+  },
+  "onboarding": {
+    "next": "Next",
+    "back": "Back",
+    "welcome": {
+      "title": "Welcome to OctAi",
+      "description": "Your AI-powered business operations platform",
+      "getStarted": "Get Started"
+    },
+    "language": {
+      "title": "Choose Your Language",
+      "description": "Select your preferred language for the interface."
+    },
+    "provider": {
+      "title": "Connect Your First AI Provider",
+      "description": "Choose a provider to start using AI features. You can add more later in Settings.",
+      "configureLater": "Configure Later"
+    },
+    "mobile": {
+      "title": "Enable Mobile Access?",
+      "description": "Access OctAi from your phone or other devices on your local network.",
+      "enableNow": "Enable now",
+      "enableNowDesc": "Set up Tailscale for remote access",
+      "tailscaleInfo": "Tailscale provides a secure VPN tunnel so you can access OctAi from any device. Install Tailscale on both your server and mobile device."
+    },
+    "complete": {
+      "title": "You're All Set!",
+      "description": "Here's a summary of your configuration. You can change any of these settings later.",
+      "language": "Language",
+      "provider": "AI Provider",
+      "notConfigured": "Not configured yet",
+      "mobile": "Mobile Access",
+      "enabled": "Enabled",
+      "setupLater": "Set up later",
+      "launch": "Launch OctAi"
+    }
+  }
+}

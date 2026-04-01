@@ -1,0 +1,16 @@
+{
+  "identifier": "default",
+  "description": "Default capability for OctAi",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "shell:allow-open",
+    "shell:allow-spawn",
+    "shell:allow-kill",
+    "shell:allow-stdin-write",
+    "process:default",
+    "notification:default",
+    "updater:default",
+    "autostart:default"
+  ]
+}

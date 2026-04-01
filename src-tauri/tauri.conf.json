@@ -1,0 +1,83 @@
+{
+  "productName": "OctAi",
+  "version": "0.1.0",
+  "identifier": "com.octai.app",
+  "build": {
+    "frontendDist": "../frontend/dist",
+    "devUrl": "http://localhost:18800",
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "title": "OctAi",
+        "width": 1400,
+        "height": 900,
+        "minWidth": 900,
+        "minHeight": 600,
+        "resizable": true,
+        "fullscreen": false,
+        "center": true,
+        "decorations": true,
+        "transparent": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": [],
+    "externalBin": ["binaries/octai-backend"],
+    "copyright": "Copyright 2025 OctAi",
+    "category": "Developer Tool",
+    "shortDescription": "OctAi - AI Agent Desktop App",
+    "longDescription": "OctAi is an all-in-one AI-powered business operations platform. Manage AI agents, 20+ LLM providers, 16 messaging channels, and 25+ tools from a beautiful desktop application.",
+    "linux": {
+      "deb": {
+        "depends": ["webkit2gtk-4.1", "libgtk-3-0"]
+      },
+      "appimage": {
+        "bundleMediaFramework": false
+      }
+    },
+    "macOS": {
+      "minimumSystemVersion": "10.15"
+    },
+    "windows": {
+      "nsis": {
+        "displayLanguageSelector": true,
+        "installMode": "currentUser",
+        "languages": ["English", "Spanish", "Chinese"]
+      }
+    }
+  },
+  "plugins": {
+    "shell": {
+      "open": true,
+      "scope": [
+        {
+          "name": "octai-backend",
+          "cmd": "octai-backend",
+          "args": true,
+          "sidecar": true
+        }
+      ]
+    },
+    "autostart": {
+      "macosExtraArgs": [],
+      "args": []
+    }
+  }
+}

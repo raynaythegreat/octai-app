@@ -1,0 +1,846 @@
+{
+  "navigation": {
+    "ai_url": "AI URL",
+    "capabilities": "Capacidades",
+    "chat": "Chat",
+    "config": "Configuración",
+    "credentials": "Credenciales",
+    "agent_group": "Agente",
+    "history": "Historial",
+    "logs": "Registros",
+    "loops": "Bucles",
+    "mcp": "Servidores MCP",
+    "model_group": "Modelos",
+    "models": "Modelos",
+    "plugins": "Plugins",
+    "reference_urls": "URLs de Referencia",
+    "schedule": "Programación",
+    "terminal": "Terminal",
+    "services": "Servicios",
+    "mobile_access": "Acceso Móvil",
+    "tailscale_vpn": "Tailscale VPN",
+    "advanced": "Avanzado",
+    "channels_group": "Canales",
+    "show_more_channels": "Más",
+    "show_less_channels": "Menos",
+    "skills": "Habilidades",
+    "tools": "Herramientas"
+  },
+  "terminal": {
+    "connected": "Conectado",
+    "disconnected": "Desconectado",
+    "connecting": "Conectando..."
+  },
+  "chat": {
+    "modes": {
+      "build": "Construir",
+      "build_description": "Ejecutar tareas directamente",
+      "chat": "Chat",
+      "chat_description": "Investigación y discusión",
+      "plan": "Planificar",
+      "plan_description": "Planificar antes de actuar"
+    },
+    "welcome": "¿Cómo puedo ayudarte hoy?",
+    "welcomeDesc": "Pregúntame sobre el clima, configuración o cualquier otra tarea. Estoy aquí para ayudarte.",
+    "placeholder": "Escribe un mensaje...\nPresiona Enter para enviar, Shift + Enter para nueva línea",
+    "newChat": "Nuevo Chat",
+    "notConnected": "La puerta de enlace no está en ejecución. Iníciala para chatear.",
+    "thinking": {
+      "step1": "Pensando...",
+      "step2": "Analizando tu solicitud...",
+      "step3": "Preparando respuesta...",
+      "step4": "Casi listo..."
+    },
+    "history": "Historial",
+    "noHistory": "Aún no hay historial de chat",
+    "historyLoadFailed": "Error al cargar el historial de chat",
+    "historyOpenFailed": "Error al abrir este historial de chat",
+    "loadingMore": "Cargando más...",
+    "deleteSession": "Eliminar sesión",
+    "messagesCount": "{{count}} mensajes",
+    "noModel": "Seleccionar modelo",
+    "empty": {
+      "noConfiguredModel": "Sin Modelo Configurado",
+      "noConfiguredModelDescription": "Necesitas configurar al menos un modelo de IA con una clave API antes de poder chatear.",
+      "goToModels": "Ir a Modelos",
+      "noSelectedModel": "Sin Modelo Seleccionado",
+      "noSelectedModelDescription": "Tienes modelos configurados, pero ninguno está configurado como predeterminado. Selecciona un modelo antes de iniciar el chat.",
+      "notRunning": "Puerta de Enlace No Activa",
+      "notRunningDescription": "Inicia el servicio de puerta de enlace para comenzar a chatear. Usa el botón Iniciar Puerta de Enlace en la barra superior."
+    },
+    "modelGroup": {
+      "apikey": "Clave API",
+      "oauth": "OAuth",
+      "local": "Local"
+    },
+    "voice": {
+      "stopRecording": "Detener grabación",
+      "voiceInput": "Entrada de voz"
+    },
+    "channelSwitchHint": "Este canal se configura a través de su página de ajustes.",
+    "channel": {
+      "web": "Chat Web",
+      "tui": "Terminal TUI",
+      "active": "Canales Activos",
+      "notConfigured": "No Configurado",
+      "readOnly": "Solo lectura — ver historial",
+      "noHistory": "Sin historial de chat para {{channel}}",
+      "viewingHistory": "Viendo historial"
+    }
+  },
+  "header": {
+    "gateway": {
+      "stopDialog": {
+        "title": "¿Detener el Servicio de Puerta de Enlace?",
+        "description": "¿Estás seguro de que deseas detener la puerta de enlace? Esto desconectará tus sesiones de chat activas y detendrá la inferencia.",
+        "confirm": "Detener Puerta de Enlace"
+      },
+      "action": {
+        "start": "Iniciar Puerta de Enlace",
+        "stop": "Detener Puerta de Enlace",
+        "restart": "Reiniciar Puerta de Enlace"
+      },
+      "status": {
+        "starting": "Iniciando Puerta de Enlace...",
+        "restarting": "Reiniciando Puerta de Enlace...",
+        "stopping": "Deteniendo Puerta de Enlace..."
+      },
+      "restartRequired": "Los cambios en el modelo requieren un reinicio de la puerta de enlace para surtir efecto."
+    }
+  },
+  "common": {
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "saving": "Guardando...",
+    "reset": "Restablecer",
+    "confirm": "Confirmar"
+  },
+  "labels": {
+    "loading": "Cargando..."
+  },
+  "credentials": {
+    "description": "Gestiona credenciales OAuth y basadas en tokens para proveedores compatibles.",
+    "loading": "Cargando credenciales...",
+    "providers": {
+      "openai": {
+        "description": "Admite OAuth de navegador, código de dispositivo e inicio de sesión por token."
+      },
+      "anthropic": {
+        "description": "Usa inicio de sesión por token para acceso a Claude."
+      },
+      "antigravity": {
+        "description": "Usa OAuth de navegador para Google Cloud Code Assist."
+      }
+    },
+    "status": {
+      "connected": "Conectado",
+      "needsRefresh": "Necesita actualización",
+      "expired": "Expirado",
+      "notLoggedIn": "Sin sesión iniciada"
+    },
+    "actions": {
+      "browser": "OAuth de Navegador",
+      "deviceCode": "Código de Dispositivo",
+      "stopLoading": "Detener Carga",
+      "saveToken": "Guardar",
+      "logout": "Cerrar Sesión",
+      "test": "Probar",
+      "deleteKey": "Eliminar Clave",
+      "updateModels": "Actualizar Modelos"
+    },
+    "logoutDialog": {
+      "title": "¿Cerrar sesión del proveedor?",
+      "description": "Esto eliminará tu credencial guardada para {{provider}}."
+    },
+    "fields": {
+      "openaiToken": "Token de OpenAI",
+      "anthropicToken": "Token de Anthropic"
+    },
+    "labels": {
+      "account": "Cuenta",
+      "email": "Correo",
+      "project": "Proyecto"
+    },
+    "errors": {
+      "loadFailed": "Error al cargar credenciales",
+      "flowFailed": "Error al verificar el flujo de autenticación",
+      "loginFailed": "Error de inicio de sesión",
+      "logoutFailed": "Error al cerrar sesión",
+      "invalidBrowserResponse": "Respuesta de inicio de sesión de navegador inválida",
+      "invalidDeviceResponse": "Respuesta de código de dispositivo inválida",
+      "popupBlocked": "No se pudo abrir una nueva pestaña. Permite las ventanas emergentes e inténtalo de nuevo.",
+      "saveFailed": "Error al guardar la clave API",
+      "testFailed": "La verificación falló"
+    },
+    "flow": {
+      "current": "Estado de autenticación actual",
+      "pending": "Esperando autorización...",
+      "success": "Autenticación exitosa",
+      "error": "Error de autenticación",
+      "expired": "Sesión de autenticación expirada"
+    },
+    "device": {
+      "title": "Inicio de Sesión de Dispositivo OpenAI",
+      "description": "Abre la página de verificación e ingresa el código a continuación. Esta página se actualizará automáticamente.",
+      "code": "Código de Usuario",
+      "url": "URL de Verificación",
+      "polling": "Verificando estado de inicio de sesión...",
+      "open": "Abrir Página de Verificación"
+    },
+    "sections": {
+      "oauth": "Proveedores OAuth",
+      "apikey": "Proveedores de Clave API"
+    },
+    "apikey": {
+      "configured": "Configurado",
+      "notConfigured": "No configurado",
+      "keyPlaceholder": "Ingresa la clave API"
+    },
+    "updateModels": {
+      "success": "Se encontraron {{count}} modelos de {{provider}}",
+      "noNew": "No se encontraron nuevos modelos"
+    },
+    "save": {
+      "success": "Clave API guardada"
+    },
+    "delete": {
+      "success": "Clave API eliminada"
+    },
+    "test": {
+      "success": "Clave API verificada exitosamente",
+      "failure": "Verificación fallida: {{error}}"
+    },
+    "tabs": {
+      "text": "Claves API",
+      "image": "Imagen",
+      "video": "Video"
+    }
+  },
+  "models": {
+    "description": "Configura claves API para proveedores de IA. Solo los modelos configurados están disponibles para el chat.",
+    "loadError": "Error al cargar modelos",
+    "noDefaultHintPrefix": "Aún no hay modelo predeterminado configurado. Haz clic en",
+    "noDefaultHintSuffix": "para establecer uno.",
+    "status": {
+      "configured": "Configurado",
+      "unconfigured": "No configurado"
+    },
+    "badge": {
+      "default": "Predeterminado",
+      "virtual": "Virtual"
+    },
+    "action": {
+      "edit": "Editar clave API",
+      "setDefault": "Establecer como predeterminado",
+      "delete": "Eliminar modelo"
+    },
+    "defaultOnSave": {
+      "label": "Modelo Predeterminado",
+      "description": "Establecer automáticamente este modelo como predeterminado después de guardar."
+    },
+    "add": {
+      "button": "Agregar Modelo",
+      "title": "Agregar Modelo Personalizado",
+      "description": "Agrega un punto final de modelo compatible con OpenAI o nativo.",
+      "modelName": "Alias del Modelo",
+      "modelNamePlaceholder": "ej. mi-gpt4",
+      "modelNameHint": "Un nombre corto usado para identificar este modelo en las conversaciones.",
+      "modelId": "Identificador del Modelo",
+      "modelIdPlaceholder": "ej. openai/gpt-4o",
+      "modelIdHint": "Formato: protocolo/id-modelo. Compatible: openai, anthropic, gemini, groq, …",
+      "errorRequired": "Este campo es obligatorio.",
+      "errorDuplicateModelName": "El alias del modelo ya existe. Usa un nombre diferente.",
+      "saveError": "Error al agregar modelo",
+      "confirm": "Agregar Modelo"
+    },
+    "delete": {
+      "title": "¿Eliminar Modelo?",
+      "description": "\"{{name}}\" se eliminará permanentemente de tu lista de modelos. No se puede deshacer.",
+      "confirm": "Eliminar"
+    },
+    "advanced": {
+      "toggle": "Opciones avanzadas"
+    },
+    "field": {
+      "apiBase": "URL Base de API",
+      "apiKey": "Clave API",
+      "apiKeyPlaceholder": "Ingresa tu clave API",
+      "apiKeyPlaceholderSet": "Deja en blanco para mantener la clave existente",
+      "proxy": "Proxy HTTP",
+      "proxyHint": "Opcional. ej. http://127.0.0.1:7890",
+      "authMethod": "Método de Autenticación",
+      "authMethodHint": "Método de autenticación: oauth, token. Deja en blanco para autenticación con clave API.",
+      "connectMode": "Modo de Conexión",
+      "connectModeHint": "Modo de conexión para proveedores basados en CLI: stdio o grpc.",
+      "workspace": "Ruta del Espacio de Trabajo",
+      "workspaceHint": "Directorio de trabajo para proveedores basados en CLI (ej. GitHub Copilot).",
+      "requestTimeout": "Tiempo de Espera de Solicitud (s)",
+      "requestTimeoutHint": "Máximo de segundos para esperar una respuesta. 0 = usar predeterminado.",
+      "rpm": "Límite de Velocidad (RPM)",
+      "rpmHint": "Máximo de solicitudes por minuto. 0 = sin límite.",
+      "thinkingLevel": "Nivel de Pensamiento",
+      "thinkingLevelHint": "Presupuesto de pensamiento extendido: off, low, medium, high, xhigh, adaptive.",
+      "maxTokensField": "Campo de Tokens Máximos",
+      "maxTokensFieldHint": "Anula el nombre del campo de solicitud para tokens máximos, ej. max_completion_tokens.",
+      "extraBody": "Cuerpo Extra",
+      "extraBodyHint": "Campos JSON adicionales para inyectar en el cuerpo de la solicitud, ej. {\"reasoning_split\": true}."
+    },
+    "edit": {
+      "title": "Configurar {{name}}",
+      "apiKeyHint": "Ya hay una clave configurada. Deja en blanco para mantenerla sin cambios.",
+      "oauthNote": "Este proveedor usa OAuth — no se requiere clave API.",
+      "saveError": "Error al guardar"
+    },
+    "tabs": {
+      "text": "Chat",
+      "image": "Imagen",
+      "video": "Video",
+      "browse": "Explorar"
+    }
+  },
+  "aiUrl": {
+    "title": "Escáner de URL con IA",
+    "description": "Descubre e integra herramientas, habilidades y servidores MCP desde cualquier URL",
+    "inputPlaceholder": "https://github.com/owner/repo o https://example.com",
+    "scanButton": "Escanear",
+    "scanning": "Analizando URL con IA...",
+    "noResults": "No se encontraron elementos integrables",
+    "resultsTitle": "{{count}} elemento descubierto",
+    "resultsTitle_plural": "{{count}} elementos descubiertos",
+    "selectAll": "Seleccionar todo",
+    "integrateButton": "Integrar {{count}} seleccionado",
+    "integrateSuccess": "Integrado {{count}} elemento con éxito",
+    "integrateSuccess_plural": "Integrados {{count}} elementos con éxito",
+    "sidebarTitle": "AI URL",
+    "errors": {
+      "emptyUrl": "Por favor ingresa una URL",
+      "analyzeFailed": "Error al analizar la URL",
+      "integrateFailed": "Error al integrar los elementos"
+    },
+    "types": {
+      "mcp_server": "Servidor MCP",
+      "skill": "Habilidad",
+      "tool": "Herramienta",
+      "plugin": "Plugin",
+      "connection": "Conexión",
+      "other": "Otro"
+    }
+  },
+  "channels": {
+    "loadError": "Error al cargar canales",
+    "edit": "Configurar {{name}}",
+    "status": {
+      "configured": "Configurado"
+    },
+    "name": {
+      "telegram": "Telegram",
+      "discord": "Discord",
+      "slack": "Slack",
+      "feishu": "Feishu",
+      "dingtalk": "DingTalk",
+      "line": "LINE",
+      "qq": "QQ",
+      "onebot": "OneBot",
+      "wecom": "WeCom",
+      "whatsapp": "WhatsApp",
+      "whatsapp_native": "WhatsApp Nativo",
+      "pico": "Web",
+      "maixcam": "MaixCam",
+      "matrix": "Matrix",
+      "irc": "IRC",
+      "weixin": "WeChat"
+    },
+    "weixin": {
+      "warningTitle": "Fase de prueba, úsalo con precaución",
+      "warningDesc": "El canal de WeChat aún es experimental y puede conllevar riesgo de suspensión de cuenta. Úsalo solo si entiendes y aceptas el riesgo.",
+      "bindTitle": "Vinculación de Cuenta WeChat",
+      "bindDesc": "Escanea el código QR con WeChat para vincular tu cuenta personal.",
+      "bind": "Vincular WeChat",
+      "rebind": "Re-vincular",
+      "bound": "WeChat Vinculado",
+      "notBound": "Cuenta de WeChat aún no vinculada.",
+      "generating": "Generando código QR...",
+      "scanHint": "Abre WeChat y escanea el código QR",
+      "scanned": "Escaneado — confirma en WeChat",
+      "expired": "Código QR expirado",
+      "retry": "Intentar de Nuevo",
+      "refresh": "Actualizar QR",
+      "errorGeneric": "Ocurrió un error. Inténtalo de nuevo."
+    },
+    "wecom": {
+      "bindTitle": "Vinculación de WeCom",
+      "bindDesc": "Escanea el código QR con WeCom para vincular tu Bot de IA.",
+      "enableDesc": "Una vez vinculado, puedes habilitar o deshabilitar el canal aquí.",
+      "enableBindFirst": "Vincula el bot primero, luego habilita el canal.",
+      "bind": "Vincular WeCom",
+      "rebind": "Re-vincular",
+      "bound": "WeCom Vinculado",
+      "notBound": "Bot de IA de WeCom aún no vinculado.",
+      "generating": "Generando código QR...",
+      "scanHint": "Abre WeCom y escanea el código QR",
+      "scanned": "Escaneado, confirma en WeCom",
+      "expired": "Código QR expirado",
+      "retry": "Intentar de Nuevo",
+      "refresh": "Actualizar QR",
+      "errorGeneric": "Ocurrió un error. Inténtalo de nuevo."
+    },
+    "field": {
+      "token": "Token del Bot",
+      "tokenPlaceholder": "Ingresa el token del bot",
+      "botToken": "Token del Bot",
+      "appToken": "Token de la Aplicación",
+      "appId": "ID de la Aplicación",
+      "appSecret": "Secreto de la Aplicación",
+      "verificationToken": "Token de Verificación",
+      "encryptKey": "Clave de Encriptación",
+      "baseUrl": "URL Base de API",
+      "proxy": "Proxy HTTP",
+      "mentionOnly": "Solo Menciones",
+      "typingEnabled": "Indicador de Escritura",
+      "placeholderEnabled": "Mensaje Provisional",
+      "placeholderText": "Texto Provisional",
+      "groupTriggerMentionOnly": "Solo Menciones en Grupo",
+      "groupTriggerPrefixes": "Prefijos de Activación en Grupo",
+      "isLark": "Lark (Internacional)",
+      "allowFrom": "Permitir De",
+      "allowFromPlaceholder": "ej. 123456, 789012",
+      "allowOrigins": "Orígenes Permitidos",
+      "allowOriginsPlaceholder": "ej. https://ejemplo.com, http://localhost:5173",
+      "secretPlaceholder": "Ingresa el secreto",
+      "secretHintSet": "Ya hay un valor configurado. Deja en blanco para mantenerlo sin cambios."
+    },
+    "page": {
+      "notFound": "El canal \"{{name}}\" no es compatible.",
+      "saveSuccess": "Configuración del canal guardada.",
+      "saveError": "Error al guardar la configuración del canal",
+      "enabled": "habilitado",
+      "docLink": "Documentación",
+      "enableLabel": "Habilitar canal",
+      "restartRequiredTitle": "Se requiere reiniciar la puerta de enlace",
+      "restartRequiredDesc": "La última configuración de {{name}} ha sido guardada. Reinicia la puerta de enlace para que surta efecto."
+    },
+    "form": {
+      "desc": {
+        "token": "Token de acceso del bot usado para conectarse a la API de la plataforma.",
+        "botToken": "Token del bot usado para enviar y recibir mensajes.",
+        "appToken": "Token de la aplicación usado para conexiones en modo Socket.",
+        "appId": "ID único de la aplicación usado para autenticación.",
+        "appSecret": "Secreto de la aplicación usado para firma y autenticación.",
+        "verificationToken": "Token de verificación para devoluciones de llamada de eventos.",
+        "encryptKey": "Clave de encriptación usada para descifrar cargas de devolución de llamada.",
+        "baseUrl": "URL base de la API de la plataforma. Se usa el punto final oficial por defecto.",
+        "proxy": "Dirección del proxy HTTP para acceso a red saliente.",
+        "mentionOnly": "Solo responder cuando el bot es explícitamente mencionado en chats grupales.",
+        "typingEnabled": "Mostrar estado de escritura mientras el asistente genera una respuesta.",
+        "placeholderEnabled": "Habilitar mensajes provisionales temporales antes de enviar la respuesta final.",
+        "groupTriggerMentionOnly": "En chats grupales, responder solo cuando el bot es mencionado.",
+        "groupTriggerPrefixes": "Prefijos de activación personalizados para chat grupal, separados por comas.",
+        "isLark": "Usar dominio internacional de Lark (open.larksuite.com) en lugar del dominio Feishu (open.feishu.cn).",
+        "allowFrom": "IDs de usuario o grupo permitidos, separados por comas.",
+        "allowOrigins": "Dominios de origen permitidos, separados por comas.",
+        "wsUrl": "URL del servicio WebSocket.",
+        "reconnectInterval": "Intervalo de reconexión tras desconexión (segundos).",
+        "bridgeUrl": "URL del servicio puente.",
+        "sessionStorePath": "Ruta local para almacenamiento de sesión.",
+        "useNative": "Si usar el modo de cliente nativo.",
+        "host": "Dirección del host del servicio.",
+        "port": "Puerto del servicio.",
+        "homeserver": "URL del servidor Matrix.",
+        "userId": "ID de usuario de la cuenta.",
+        "deviceId": "ID del dispositivo.",
+        "joinOnInvite": "Unirse automáticamente a salas cuando se recibe una invitación.",
+        "clientId": "ID de cliente usado para autenticación de la plataforma.",
+        "corpId": "ID Corp de la empresa.",
+        "agentId": "ID del agente de la aplicación empresarial.",
+        "webhookUrl": "URL completa del webhook.",
+        "webhookHost": "Host de escucha del webhook.",
+        "webhookPort": "Puerto de escucha del webhook.",
+        "webhookPath": "Ruta de la ruta del webhook.",
+        "replyTimeout": "Tiempo de espera de respuesta en segundos.",
+        "maxSteps": "Número máximo de pasos de procesamiento.",
+        "welcomeMessage": "Contenido del mensaje de bienvenida para nuevas sesiones.",
+        "allowTokenQuery": "Permitir token en parámetros de consulta URL.",
+        "pingInterval": "Intervalo de latido de conexión en segundos.",
+        "readTimeout": "Tiempo de espera de lectura en segundos.",
+        "writeTimeout": "Tiempo de espera de escritura en segundos.",
+        "maxConnections": "Número máximo de conexiones simultáneas.",
+        "server": "Dirección del servidor IRC.",
+        "tls": "Si habilitar TLS.",
+        "nick": "Apodo del bot.",
+        "user": "Nombre de usuario IRC.",
+        "realName": "Nombre real mostrado.",
+        "channels": "Canales IRC a unirse.",
+        "requestCaps": "Lista de capacidades IRC solicitadas al conectarse.",
+        "maxBase64FileSizeMiB": "Tamaño máximo en MiB para convertir archivos locales a base64 antes de subir. 0 significa ilimitado. Solo aplica a archivos locales.",
+        "genericField": "Usado para configurar {{field}}."
+      }
+    },
+    "validation": {
+      "requiredField": "Este campo es obligatorio."
+    }
+  },
+  "pages": {
+    "agent": {
+      "aiUrl": {
+        "add": "Agregar",
+        "already_exists": "Ya existe",
+        "args_hint": "separados por espacios",
+        "args_label": "Argumentos",
+        "args_placeholder": "ej. -y @modelcontextprotocol/server-github",
+        "cancel_all": "Cancelar todo",
+        "command_label": "Comando",
+        "command_placeholder": "ej. npx, uvx, node",
+        "conflict_description": "Algunos elementos ya existen. Elige cómo manejar cada uno.",
+        "conflict_title": "Resolver Conflictos",
+        "connection_http": "HTTP (URL remota)",
+        "connection_sse": "SSE (URL remota)",
+        "connection_stdio": "stdio (comando local)",
+        "connection_type": "Tipo de conexión",
+        "continue": "Continuar",
+        "manual_config_description": "necesita detalles de conexión para ser integrado.",
+        "manual_config_more": "{{count}} más después de este",
+        "manual_config_title": "Configurar Servidor MCP",
+        "needs_config": "requiere configuración",
+        "replace": "Reemplazar",
+        "skip": "Omitir",
+        "skip_this": "Omitir este",
+        "url_label": "URL",
+        "url_placeholder": "https://mcp.example.com/sse"
+      },
+      "load_error": "Error al cargar información de soporte del agente.",
+      "plugins": {
+        "delete_error": "Error al eliminar plugin.",
+        "empty_no_installed": "No hay plugins instalados aún. Usa el Escáner de URL con IA para descubrir e instalar plugins.",
+        "empty_no_match": "Ningún plugin coincide con tu búsqueda.",
+        "load_error": "Error al cargar plugins.",
+        "no_description": "Sin descripción",
+        "refresh": "Actualizar",
+        "remove": "Eliminar plugin",
+        "remove_success": "Eliminado \"{{name}}\"",
+        "search_placeholder": "Buscar por nombre o tipo…",
+        "tab_all": "Todos",
+        "tab_mcp_servers": "Servidores MCP",
+        "tab_other": "Otros",
+        "tab_skills": "Habilidades",
+        "tab_tools": "Herramientas",
+        "title": "Plugins",
+        "update_error": "Error al actualizar plugin."
+      },
+      "skills": {
+        "description": "Las habilidades se cargan desde el espacio de trabajo, el directorio global de OctAi y los directorios integrados.",
+        "empty": "No hay habilidades disponibles actualmente.",
+        "import": "Importar Habilidad",
+        "import_success": "Habilidad importada.",
+        "import_error": "Error al importar habilidad.",
+        "view": "Ver",
+        "delete": "Eliminar",
+        "delete_title": "¿Eliminar Habilidad?",
+        "delete_description": "\"{{name}}\" se eliminará de las habilidades del espacio de trabajo.",
+        "delete_confirm": "Eliminar",
+        "delete_success": "Habilidad eliminada.",
+        "delete_error": "Error al eliminar habilidad.",
+        "viewer_title": "Contenido de la Habilidad",
+        "viewer_description": "Lee el contenido efectivo actual de SKILL.md aquí.",
+        "loading_detail": "Cargando contenido de habilidad...",
+        "load_detail_error": "Error al cargar contenido de habilidad.",
+        "path": "Ruta de Habilidad",
+        "no_description": "No se proporcionó descripción."
+      },
+      "tools": {
+        "description": "Esta vista refleja si cada herramienta del agente está habilitada, deshabilitada o bloqueada por un requisito previo faltante.",
+        "empty": "No hay herramientas disponibles.",
+        "enable": "Habilitar",
+        "disable": "Deshabilitar",
+        "enable_success": "Herramienta habilitada.",
+        "disable_success": "Herramienta deshabilitada.",
+        "toggle_error": "Error al actualizar estado de herramienta.",
+        "config_key": "Controlado por tools.{{key}}",
+        "status": {
+          "enabled": "Habilitado",
+          "disabled": "Deshabilitado",
+          "blocked": "Bloqueado"
+        },
+        "categories": {
+          "automation": "Automatización",
+          "filesystem": "Sistema de Archivos",
+          "web": "Web",
+          "communication": "Comunicación",
+          "skills": "Habilidades",
+          "agents": "Agentes",
+          "hardware": "Hardware",
+          "discovery": "Descubrimiento"
+        },
+        "reasons": {
+          "requires_linux": "Esta herramienta solo funciona en hosts Linux con los archivos de dispositivo requeridos expuestos.",
+          "requires_skills": "Habilita `tools.skills` antes de usar esta herramienta del registro de habilidades.",
+          "requires_subagent": "Habilita `tools.subagent` antes de que la herramienta spawn pueda delegar trabajo.",
+          "requires_mcp_discovery": "Habilita `tools.mcp.discovery` antes de que las herramientas de descubrimiento MCP estén disponibles."
+        }
+      }
+    },
+    "config": {
+      "autoAssist": {
+        "description": "Activar automáticamente habilidades y herramientas según el contexto.",
+        "exclude_mcp_servers": "Excluir Servidores MCP",
+        "exclude_skills": "Excluir Habilidades",
+        "exclude_tools": "Excluir Herramientas",
+        "excluded": "excluido",
+        "loading": "Cargando ajustes de Auto-Asistencia…",
+        "max_auto_skills": "Máximo de habilidades auto-activadas",
+        "none_available": "Ninguno disponible.",
+        "save_error": "Error al guardar ajustes.",
+        "saved": "Guardado",
+        "title": "Auto-Asistencia"
+      },
+      "load_config_error": "Error al cargar la configuración.",
+      "load_error": "Error al cargar configuración. Actualiza e inténtalo de nuevo.",
+      "validation": {
+        "session_scope_required": "El ámbito de sesión es obligatorio.",
+        "workspace_required": "La ruta del espacio de trabajo es obligatoria."
+      },
+      "workspace": "Directorio de Espacio de Trabajo",
+      "workspace_hint": "Directorio base para operaciones de archivos del agente.",
+      "restrict_workspace": "Restringir al Espacio de Trabajo",
+      "restrict_workspace_hint": "Solo permitir operaciones de archivos dentro del espacio de trabajo.",
+      "tool_feedback_enabled": "Retroalimentación de Herramientas",
+      "tool_feedback_enabled_hint": "Envía una vista previa corta de la llamada a herramienta al chat actual antes de cada ejecución.",
+      "tool_feedback_max_args_length": "Longitud de Vista Previa de Args de Retroalimentación",
+      "tool_feedback_max_args_length_hint": "Número máximo de caracteres de argumento mostrados en cada mensaje de retroalimentación. Establece 0 para usar el predeterminado.",
+      "exec_enabled": "Permitir Comandos",
+      "exec_enabled_hint": "Habilita o deshabilita la ejecución de comandos para la aplicación.",
+      "allow_remote": "Permitir Comandos Remotos",
+      "allow_remote_hint": "Cuando está habilitado, sesiones remotas o contextos no locales también pueden ejecutar comandos.",
+      "enable_deny_patterns": "Habilitar Lista Negra",
+      "enable_deny_patterns_hint": "Cuando está habilitado, la aplicación bloquea comandos que coincidan con sus patrones peligrosos integrados.",
+      "exec_timeout_seconds": "Tiempo de Espera de Comando (segundos)",
+      "exec_timeout_seconds_hint": "Tiempo máximo de ejecución para solicitudes de comandos. Establece 0 para usar el tiempo de espera predeterminado.",
+      "custom_deny_patterns": "Lista Negra de Comandos",
+      "custom_deny_patterns_hint": "Agrega reglas adicionales de bloqueo de comandos, una expresión regular por línea.",
+      "custom_allow_patterns": "Lista Blanca de Comandos",
+      "custom_allow_patterns_hint": "Agrega reglas adicionales de permitir comandos, una expresión regular por línea.",
+      "custom_patterns_placeholder": "^rm\\s+-rf\\b\n^git\\s+push\\b",
+      "pattern_detector_title": "Herramienta de Detección de Patrones",
+      "pattern_detector_hint": "Ingresa un comando para probar si coincide con algún patrón de lista negra o blanca.",
+      "pattern_detector_input_placeholder": "Ingresa un comando para probar, ej. rm -rf /tmp",
+      "pattern_detector_test_button": "Probar",
+      "pattern_detector_result_allowed": "Permitido (coincide con lista blanca)",
+      "pattern_detector_result_blocked": "Bloqueado (coincide con lista negra)",
+      "pattern_detector_result_no_match": "Sin coincidencia (usará reglas predeterminadas)",
+      "allow_shell_execution": "Permitir Comandos Programados",
+      "allow_shell_execution_hint": "Permitir que las tareas programadas ejecuten comandos por defecto.",
+      "cron_exec_timeout": "Tiempo de Espera de Comando Programado (minutos)",
+      "cron_exec_timeout_hint": "Tiempo máximo de ejecución para comandos programados. Establece 0 para deshabilitar.",
+      "max_tokens": "Tokens Máximos",
+      "max_tokens_hint": "Límite superior de tokens por respuesta del modelo.",
+      "context_window": "Ventana de Contexto",
+      "context_window_hint": "Capacidad de contexto de entrada del modelo en tokens.",
+      "max_tool_iterations": "Iteraciones Máximas de Herramientas",
+      "max_tool_iterations_hint": "Máximo de bucles de llamadas a herramientas en una sola tarea.",
+      "summarize_threshold": "Umbral de Resumen de Mensajes",
+      "summarize_threshold_hint": "Iniciar resumen después de este número de mensajes.",
+      "summarize_token_percent": "Porcentaje de Tokens de Resumen",
+      "summarize_token_percent_hint": "Usado cuando se activa el resumen de conversación.",
+      "session_scope": "Ámbito de Sesión",
+      "session_scope_hint": "Cómo se aísla el contexto del chat entre pares/canales.",
+      "session_scope_per_channel_peer": "Por Canal + Par",
+      "session_scope_per_channel_peer_desc": "Contexto separado para cada usuario en cada canal.",
+      "session_scope_per_channel": "Por Canal",
+      "session_scope_per_channel_desc": "Un contexto compartido por canal.",
+      "session_scope_per_peer": "Por Par",
+      "session_scope_per_peer_desc": "Un contexto por usuario entre canales.",
+      "session_scope_global": "Global",
+      "session_scope_global_desc": "Todos los mensajes comparten un contexto global.",
+      "heartbeat_enabled": "Latido",
+      "heartbeat_enabled_hint": "Enviar mensajes de latido periódicos.",
+      "heartbeat_interval": "Intervalo de Latido (minutos)",
+      "heartbeat_interval_hint": "Intervalo en minutos entre señales de latido.",
+      "devices_enabled": "Habilitar Dispositivos",
+      "devices_enabled_hint": "Habilitar integraciones de dispositivos de hardware.",
+      "monitor_usb": "Monitorear USB",
+      "monitor_usb_hint": "Observar eventos de conexión/desconexión USB cuando los dispositivos están habilitados.",
+      "autostart_label": "Iniciar al Iniciar Sesión",
+      "autostart_hint": "Iniciar OctAi Dashboard automáticamente cuando inicies sesión.",
+      "autostart_unsupported": "El inicio al iniciar sesión no es compatible en esta plataforma.",
+      "autostart_load_error": "Error al cargar el estado de inicio al iniciar sesión.",
+      "server_port": "Puerto del Servicio",
+      "server_port_hint": "Puerto HTTP usado por OctAi Dashboard.",
+      "lan_access": "Habilitar Acceso LAN",
+      "lan_access_hint": "Permitir acceso desde otros dispositivos en tu red local.",
+      "allowed_cidrs": "CIDRs de Red Permitidos",
+      "allowed_cidrs_hint": "Solo los clientes de estos rangos CIDR pueden acceder al servicio.",
+      "allowed_cidrs_placeholder": "192.168.1.0/24\n10.0.0.0/8",
+      "sections": {
+        "agent": "Agente",
+        "runtime": "Tiempo de Ejecución",
+        "exec": "Ejecutar Comandos",
+        "cron": "Tareas Cron",
+        "launcher": "Servicio",
+        "devices": "Dispositivos"
+      },
+      "open_raw": "Config. Sin Procesar",
+      "back_to_visual": "Config. Visual",
+      "raw_json_title": "Configuración JSON Sin Procesar",
+      "json_placeholder": "Ingresa configuración JSON válida...",
+      "save_success": "Configuración guardada exitosamente.",
+      "save_error": "Error al guardar configuración.",
+      "reset_confirm_title": "Restablecer Cambios",
+      "reset_confirm_desc": "¿Estás seguro de que deseas restablecer tus cambios no guardados al último estado guardado?",
+      "reset_success": "Los cambios se han restablecido al último estado guardado.",
+      "invalid_json": "Formato JSON inválido.",
+      "format_success": "JSON formateado exitosamente.",
+      "format_error": "Formato JSON inválido.",
+      "format": "Formatear",
+      "unsaved_changes": "Tienes cambios no guardados."
+    },
+    "logs": {
+      "clear": "Limpiar registros",
+      "empty": "Esperando registros..."
+    }
+  },
+  "mcp": {
+    "title": "Servidores MCP",
+    "description": "Administra servidores del Protocolo de Contexto de Modelo para extender tu agente con herramientas y capacidades adicionales.",
+    "enabled": "MCP Habilitado",
+    "addServer": "Agregar Servidor",
+    "editServer": "Editar Servidor",
+    "deleteServer": "Eliminar Servidor",
+    "noServers": "Aún no hay servidores MCP configurados. Agrega uno para extender las capacidades de tu agente.",
+    "fields": {
+      "name": "Nombre del Servidor",
+      "command": "Comando",
+      "args": "Argumentos",
+      "type": "Tipo",
+      "url": "URL",
+      "env": "Variables de Entorno",
+      "argsHint": "Argumentos separados por espacios, ej. --port 3000",
+      "envHint": "Una clave=valor por línea"
+    },
+    "types": {
+      "stdio": "Stdio (proceso local)",
+      "sse": "SSE (flujo HTTP)",
+      "http": "HTTP"
+    },
+    "server": {
+      "saved": "Servidor guardado",
+      "deleted": "Servidor eliminado",
+      "saveError": "Error al guardar servidor",
+      "deleteError": "Error al eliminar servidor"
+    },
+    "discovery": {
+      "title": "Descubrimiento de Herramientas",
+      "description": "Descubre e indexa automáticamente herramientas de servidores MCP conectados.",
+      "enabled": "Descubrimiento Habilitado"
+    },
+    "toggle": {
+      "enableError": "Error al actualizar la configuración de MCP"
+    }
+  },
+  "settings": {
+    "mobile": {
+      "title": "Acceso Móvil",
+      "description": "Configura el acceso móvil a tu instancia de OctAi desde teléfonos y otros dispositivos.",
+      "enable": "Habilitar Acceso Móvil",
+      "enabled_success": "Acceso móvil habilitado",
+      "disabled_success": "Acceso móvil deshabilitado",
+      "toggle_error": "Error al actualizar la configuración de acceso móvil",
+      "connection_method": "Método de Conexión",
+      "method_tailscale": "Tailscale VPN (Recomendado)",
+      "method_lan": "Red Local (LAN)",
+      "method_changed": "Método de conexión actualizado",
+      "access_url": "URL de Acceso",
+      "url_copied": "URL copiada al portapapeles",
+      "qr_code": "Código QR",
+      "devices": "Dispositivos Conectados",
+      "devices_description": "Dispositivos actualmente conectados a esta instancia.",
+      "enable_first": "Habilita el acceso móvil para ver los dispositivos conectados.",
+      "no_devices": "No hay dispositivos conectados aún",
+      "device_name": "Dispositivo",
+      "device_type": "Tipo",
+      "last_connected": "Última Conexión"
+    },
+    "tailscale": {
+      "title": "Tailscale VPN",
+      "description": "Configura Tailscale para crear un túnel VPN seguro para acceso remoto.",
+      "status": "Estado",
+      "status_connected": "Conectado",
+      "status_disconnected": "Desconectado",
+      "status_not_installed": "No Instalado",
+      "install": "Instalar Tailscale",
+      "installing": "Instalando...",
+      "install_success": "Tailscale instalado exitosamente",
+      "install_error": "Error al instalar Tailscale",
+      "authenticate": "Autenticar",
+      "authenticating": "Autenticando...",
+      "auth_started": "Autenticación iniciada. Complétala en tu navegador.",
+      "auth_error": "Error al iniciar la autenticación",
+      "toggle_error": "Error al actualizar la configuración de Tailscale",
+      "ip_address": "Dirección IP",
+      "hostname": "Nombre del Host",
+      "tailnet_url": "URL del Tailnet",
+      "magic_dns": "Usar MagicDNS",
+      "auto_start": "Inicio automático al encender",
+      "devices": "Dispositivos del Tailnet",
+      "devices_description": "Otros dispositivos en tu Tailnet.",
+      "no_devices": "No hay otros dispositivos en tu Tailnet",
+      "device_hostname": "Nombre del Host",
+      "device_status": "Estado",
+      "online": "En línea",
+      "offline": "Desconectado"
+    },
+    "advanced": {
+      "title": "Avanzado",
+      "description": "Configura ajustes avanzados para usuarios experimentados.",
+      "terminal_access": "Acceso a Terminal",
+      "terminal_enabled": "Habilitar terminal integrada",
+      "shell_path": "Ruta del Shell",
+      "portable_mode": "Modo Portátil",
+      "portable_enabled": "Almacenar todos los datos en el directorio de la aplicación",
+      "auto_updater": "Actualización Automática",
+      "auto_updater_enabled": "Habilitar actualización automática",
+      "update_channel": "Canal de Actualización",
+      "channel_stable": "Estable",
+      "channel_beta": "Beta",
+      "current_version": "Versión Actual",
+      "check_now": "Verificar Ahora",
+      "checking": "Verificando...",
+      "update_check_info": "Ya estás en la última versión.",
+      "update_check_error": "Error al verificar actualizaciones"
+    }
+  },
+  "onboarding": {
+    "next": "Siguiente",
+    "back": "Atrás",
+    "welcome": {
+      "title": "Bienvenido a OctAi",
+      "description": "Tu plataforma de operaciones empresariales impulsada por IA",
+      "getStarted": "Comenzar"
+    },
+    "language": {
+      "title": "Elige Tu Idioma",
+      "description": "Selecciona tu idioma preferido para la interfaz."
+    },
+    "provider": {
+      "title": "Conecta Tu Primer Proveedor de IA",
+      "description": "Elige un proveedor para empezar a usar las funciones de IA. Puedes agregar más tarde en Configuración.",
+      "configureLater": "Configurar Después"
+    },
+    "mobile": {
+      "title": "¿Habilitar Acceso Móvil?",
+      "description": "Accede a OctAi desde tu teléfono u otros dispositivos en tu red local.",
+      "enableNow": "Habilitar ahora",
+      "enableNowDesc": "Configurar Tailscale para acceso remoto",
+      "tailscaleInfo": "Tailscale proporciona un túnel VPN seguro para que puedas acceder a OctAi desde cualquier dispositivo. Instala Tailscale tanto en tu servidor como en tu dispositivo móvil."
+    },
+    "complete": {
+      "title": "¡Todo Listo!",
+      "description": "Aquí tienes un resumen de tu configuración. Puedes cambiar cualquiera de estas configuraciones más tarde.",
+      "language": "Idioma",
+      "provider": "Proveedor de IA",
+      "notConfigured": "Aún no configurado",
+      "mobile": "Acceso Móvil",
+      "enabled": "Habilitado",
+      "setupLater": "Configurar después",
+      "launch": "Iniciar OctAi"
+    }
+  }
+}
