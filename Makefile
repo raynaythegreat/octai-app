@@ -1,4 +1,4 @@
-.PHONY: dev build build-frontend build-backend build-app build-all clean
+.PHONY: dev dev-app build build-frontend build-backend build-app build-all clean
 
 APP_NAME := octai-app
 GO_BACKEND := go-backend/cmd/octai-app
@@ -7,7 +7,13 @@ TAURI_DIR := src-tauri
 
 VERSION := 0.1.0
 
-dev:
+dev: build-backend
+	./dev.sh
+
+dev-frontend:
+	cd $(FRONTEND_DIR) && pnpm dev
+
+dev-tauri:
 	cd $(TAURI_DIR) && cargo tauri dev
 
 build-frontend:
