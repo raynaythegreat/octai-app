@@ -20,7 +20,7 @@ build-frontend:
 	cd $(FRONTEND_DIR) && pnpm install && pnpm build
 
 build-backend:
-	cd go-backend && CGO_ENABLED=0 go build -o ../$(TAURI_DIR)/binaries/octai-backend-$(shell uname -s | tr '[:upper:]' '[:lower:]')-x86_64 ./cmd/octai-app/
+	cd go-backend && CGO_ENABLED=0 go build -o ../$(TAURI_DIR)/binaries/octai-backend-x86_64-unknown-linux-gnu ./cmd/octai-app/
 
 build: build-backend build-frontend
 

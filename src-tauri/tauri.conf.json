@@ -65,15 +65,7 @@
   },
   "plugins": {
     "shell": {
-      "open": true,
-      "scope": [
-        {
-          "name": "octai-backend",
-          "cmd": "octai-backend",
-          "args": true,
-          "sidecar": true
-        }
-      ]
+      "open": true
     },
     "autostart": {
       "macosExtraArgs": [],

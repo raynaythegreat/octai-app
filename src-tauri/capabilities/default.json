@@ -3,9 +3,19 @@
   "description": "Default capability for OctAi",
   "windows": ["main"],
   "permissions": [
+    {
+      "identifier": "shell:allow-spawn",
+      "allow": [
+        {
+          "name": "octai-backend",
+          "cmd": "octai-backend",
+          "args": true,
+          "sidecar": true
+        }
+      ]
+    },
     "core:default",
     "shell:allow-open",
-    "shell:allow-spawn",
     "shell:allow-kill",
     "shell:allow-stdin-write",
     "process:default",
