@@ -41,7 +41,7 @@ function WelcomeStep({ onNext }: { onNext: () => void }) {
 
   return (
     <div className="onboarding-step flex flex-col items-center justify-center gap-4">
-      <img src="/logo-octai-full.svg" alt="OctAi" className="onboarding-logo" />
+      <img src="/logo_with_text.png" alt="OctAi" className="onboarding-logo" />
       <h2 className="onboarding-heading">{t("onboarding.welcome.title")}</h2>
       <p className="onboarding-description">{t("onboarding.welcome.description")}</p>
       <Button
